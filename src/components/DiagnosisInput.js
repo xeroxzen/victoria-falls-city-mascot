@@ -1,5 +1,5 @@
 import React from "react";
-import firebase from "./firebase";
+import firebase from "../firebase";
 
 export const DiagnosisInput = ({ diagnose }) => {
   const [phone, setPhone] = React.useState(diagnose.phone);
@@ -7,20 +7,25 @@ export const DiagnosisInput = ({ diagnose }) => {
   const onUpdate = () => {
     const db = firebase.firestore();
     db.collection("userDiagnosis")
-      .doc("0")
+      .doc(diagnose.id)
       .set({ ...diagnose, phone });
-    };
-    
-    
+  };
+
+  const onDelete = () => {
+    const db = firebase.firestore();
+    db.collection("userDiagnosis").doc(diagnose.id).delete();
+  };
+
   return (
     <>
       <input
         value={phone}
         onChange={(e) => {
-          SVGAnimateTransformElement(e.target.value);
+          setPhone(e.target.value);
         }}
       />
       <button onClick={onUpdate}>Update</button>
+      <button onClick={onDelete}>Delete</button>
     </>
   );
 };

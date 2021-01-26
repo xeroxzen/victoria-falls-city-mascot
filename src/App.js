@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import firebase from "./firebase";
-import { DiagnosisInput} from "./components/DiagnosisInput";
+import { DiagnosisInput } from "./components/DiagnosisInput";
 
 function App() {
   // userDiagnosis state
@@ -11,7 +11,7 @@ function App() {
     const fetchData = async () => {
       const db = firebase.firestore();
       const data = await db.collection("userDiagnosis").get();
-      setDiagnosis(data.docs.map((doc) => doc.data()));
+      setDiagnosis(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     };
     fetchData();
   }, []);
@@ -20,7 +20,7 @@ function App() {
     <ul>
       {diagnosis.map((diagnose) => (
         <li key={diagnose.phone}>
-          <DiagnosisInput diagnose />
+          <DiagnosisInput diagnose={diagnose} />
         </li>
       ))}
     </ul>
