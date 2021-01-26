@@ -3,6 +3,7 @@ import firebase from "firebase";
 const config = {
   apiKey: "AIzaSyChqDrr0pIc0V9qJj2vsxSQEGhy1AbxOEg",
   authDomain: "victoriafallsmascot-imwo.firebaseapp.com",
+  databaseURL: "https://victoriafallsmascot-imwo.firebaseio.com",
   projectId: "victoriafallsmascot-imwo",
   storageBucket: "victoriafallsmascot-imwo.appspot.com",
   messagingSenderId: "880901922463",

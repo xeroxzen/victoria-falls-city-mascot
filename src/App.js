@@ -1,24 +1,27 @@
 import React from "react";
 import "./App.css";
 import firebase from "./firebase";
+import { DiagnosisInput} from "./components/DiagnosisInput";
 
 function App() {
   // userDiagnosis state
-  const [userDiagnosis, setUserDiagnosis] = React.useState([]);
+  const [diagnosis, setDiagnosis] = React.useState([]);
 
   React.useEffect(() => {
     const fetchData = async () => {
       const db = firebase.firestore();
       const data = await db.collection("userDiagnosis").get();
-      setUserDiagnosis(data.docs.map((doc) => doc.data()));
+      setDiagnosis(data.docs.map((doc) => doc.data()));
     };
     fetchData();
   }, []);
 
   return (
     <ul>
-      {userDiagnosis.map((diagnosis) => (
-        <li key={diagnosis.phone}>{diagnosis.phone}</li>
+      {diagnosis.map((diagnose) => (
+        <li key={diagnose.phone}>
+          <DiagnosisInput diagnose />
+        </li>
       ))}
     </ul>
   );
