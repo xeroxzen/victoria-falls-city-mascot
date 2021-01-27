@@ -33,31 +33,7 @@ function App() {
         </header>
         <ul>
           {diagnosis.map((diagnose) => (
-            <li key={diagnose.phone}>
-              <DiagnosisInput diagnose={diagnose} />
-            </li>
-          ))}
-        </ul>
-
-        <ul>
-          {diagnosis.map((diagnose) => (
-            <li key={diagnose.symptoms}>
-              <DiagnosisInput diagnose={diagnose} />
-            </li>
-          ))}
-        </ul>
-
-        <ul>
-          {diagnosis.map((diagnose) => (
-            <li key={diagnose.time}>
-              <DiagnosisInput diagnose={diagnose} />
-            </li>
-          ))}
-        </ul>
-
-        <ul>
-          {diagnosis.map((diagnose) => (
-            <li key={diagnose.ageRange}>
+            <li key={diagnose.id}>
               <DiagnosisInput diagnose={diagnose} />
             </li>
           ))}

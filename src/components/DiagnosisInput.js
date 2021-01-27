@@ -4,7 +4,7 @@ import firebase from "../firebase";
 export const DiagnosisInput = ({ diagnose }) => {
   const [phone, setPhone] = React.useState(diagnose.phone);
   const [symptoms, setSymptoms] = React.useState(diagnose.symptoms);
-  const [time, setTime] = React.useState(diagnose.phone);
+  const [time, setTime] = React.useState(diagnose.time);
   const [ageRange, setAgeRange] = React.useState(diagnose.ageRange);
   const [gender, setGender] = React.useState(diagnose.gender);
 
