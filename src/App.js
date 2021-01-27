@@ -2,6 +2,8 @@ import React from "react";
 import "./App.css";
 import firebase from "./firebase";
 import { DiagnosisInput } from "./components/DiagnosisInput";
+import Button from "@material-ui/core/Button";
+import Container from "@material-ui/core/Container";
 
 function App() {
   // userDiagnosis state
@@ -17,13 +19,20 @@ function App() {
   }, []);
 
   return (
-    <ul>
-      {diagnosis.map((diagnose) => (
-        <li key={diagnose.phone}>
-          <DiagnosisInput diagnose={diagnose} />
-        </li>
-      ))}
-    </ul>
+    <Container>
+      <Button variant="contained" color="primary">
+        Hello World
+      </Button>
+      <div className="App">
+        <ul>
+          {diagnosis.map((diagnose) => (
+            <li key={diagnose.phone}>
+              <DiagnosisInput diagnose={diagnose} />
+            </li>
+          ))}
+        </ul>
+      </div>
+    </Container>
   );
 }
 
