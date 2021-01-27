@@ -1,7 +1,9 @@
 import React from "react";
 import firebase from "../firebase";
 import Button from "@material-ui/core/Button";
-import { DeleteIcon, SaveIcon } from "@material-ui/icons/";
+import { Table, TableHead, TableBody, TableRow } from "@material-ui/core";
+import DeleteIcon from "@material-ui/icons/Delete";
+import SaveIcon from "@material-ui/icons/Save";
 
 export const DiagnosisInput = ({ diagnose }) => {
   const [phone, setPhone] = React.useState(diagnose.phone);
@@ -61,7 +63,7 @@ export const DiagnosisInput = ({ diagnose }) => {
         size="small"
         color="primary"
         endIcon={<SaveIcon />}
-        spacing="1"
+        spacing="2"
         onClick={onUpdate}
       >
         Update
@@ -71,7 +73,7 @@ export const DiagnosisInput = ({ diagnose }) => {
         size="small"
         color="secondary"
         endIcon={<DeleteIcon />}
-        spacing="1"
+        spacing="2"
         onClick={onDelete}
       >
         Delete
