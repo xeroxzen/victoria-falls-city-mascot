@@ -5,6 +5,8 @@ import { DiagnosisInput } from "./components/DiagnosisInput";
 import Button from "@material-ui/core/Button";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Container";
+// import DataGrid from "@material-ui/core/DataGrid";
+import Table from "@material-ui/core/Table";
 import "@fontsource/roboto";
 
 function App() {
@@ -31,13 +33,15 @@ function App() {
             Welcome to Victoria Falls Municipality
           </Typography>
         </header>
-        <ul>
-          {diagnosis.map((diagnose) => (
-            <li key={diagnose.id}>
-              <DiagnosisInput diagnose={diagnose} />
-            </li>
-          ))}
-        </ul>
+        <Table>
+          <ul>
+            {diagnosis.map((diagnose) => (
+              <li key={diagnose.id}>
+                <DiagnosisInput diagnose={diagnose} />
+              </li>
+            ))}
+          </ul>
+        </Table>
       </div>
     </Container>
   );
