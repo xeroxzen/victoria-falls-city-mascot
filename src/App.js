@@ -73,12 +73,6 @@ function App() {
       <ThemeProvider theme={theme}>
         <div className="App">
           <header className="App-header">
-            <Typography variant="h6">
-              Welcome to Victoria Falls Municipality
-            </Typography>
-            <Typography variant="subtitle1">
-              Something Interesting goes here
-            </Typography>
             <NavBar />
 
             <ol>
@@ -88,11 +82,6 @@ function App() {
                 </li>
               ))}
             </ol>
-            {/* {users.map((user) => (
-              <li key={user.phone}>
-                <CustomizedTables user={user} />
-              </li>
-            ))} */}
           </header>
         </div>
       </ThemeProvider>
