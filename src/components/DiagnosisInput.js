@@ -1,5 +1,7 @@
 import React from "react";
 import firebase from "../firebase";
+import Button from "@material-ui/core/Button";
+import { DeleteIcon, SaveIcon } from "@material-ui/icons/";
 
 export const DiagnosisInput = ({ diagnose }) => {
   const [phone, setPhone] = React.useState(diagnose.phone);
@@ -52,8 +54,28 @@ export const DiagnosisInput = ({ diagnose }) => {
           setAgeRange(e.target.value);
         }}
       />
-      <button onClick={onUpdate}>Update</button>
-      <button onClick={onDelete}>Delete</button>
+      {/* <button onClick={onUpdate}>Update</button> */}
+      {/* <button onClick={onDelete}>Delete</button> */}
+      <Button
+        variant="contained"
+        size="small"
+        color="primary"
+        endIcon={<SaveIcon />}
+        spacing="1"
+        onClick={onUpdate}
+      >
+        Update
+      </Button>
+      <Button
+        variant="contained"
+        size="small"
+        color="secondary"
+        endIcon={<DeleteIcon />}
+        spacing="1"
+        onClick={onDelete}
+      >
+        Delete
+      </Button>
     </>
   );
 };
