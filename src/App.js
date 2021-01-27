@@ -2,23 +2,16 @@ import React from "react";
 import "./App.css";
 import firebase from "./firebase";
 import { DiagnosisInput } from "./components/DiagnosisInput";
+import NavBar from "./components/NavBar";
+// import { CustomizedTables } from "./components/CustomizedTables";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Container";
 import Button from "@material-ui/core/Button";
 // import DataGrid from "@material-ui/core/DataGrid";
 // eslint-disable-next-line;
 // import { withStyles, makeStyles } from "@material-ui/core/styles";
-import Table from "@material-ui/core/Table";
-import TableBody from "@material-ui/core/TableBody";
-import TableCell from "@material-ui/core/TableCell";
-import TableContainer from "@material-ui/core/TableContainer";
-import TableHead from "@material-ui/core/TableHead";
-import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
+
 import "@fontsource/roboto";
 
 import {
@@ -55,6 +48,7 @@ function ButtonStyled() {
 function App() {
   // userDiagnosis state
   const [diagnosis, setDiagnosis] = React.useState([]);
+  // const [users, setUsers] = React.useState([]);
 
   React.useEffect(() => {
     const fetchData = async () => {
@@ -64,6 +58,15 @@ function App() {
     };
     fetchData();
   }, []);
+
+  // React.useEffect(() => {
+  //   const fetchData = async () => {
+  //     const db = firebase.firestore();
+  //     const data = await db.collection("userDiagnosis").get();
+  //     setUsers(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+  //   };
+  //   fetchData();
+  // }, []);
 
   return (
     <Container maxWidth="xd">
@@ -76,22 +79,7 @@ function App() {
             <Typography variant="subtitle1">
               Something Interesting goes here
             </Typography>
-            <AppBar maxWidth="xs" color="secondary">
-              <Toolbar>
-                <IconButton>
-                  <MenuIcon />
-                </IconButton>
-                <Typography variant="h2">
-                  Victoria Falls Mascot Admin Panel
-                </Typography>
-                <Button variant="small" color="secondary">
-                  Home
-                </Button>
-                <Button variant="small" color="secondary">
-                  Login
-                </Button>
-              </Toolbar>
-            </AppBar>
+            <NavBar />
 
             <ol>
               {diagnosis.map((diagnose) => (
@@ -100,6 +88,11 @@ function App() {
                 </li>
               ))}
             </ol>
+            {/* {users.map((user) => (
+              <li key={user.phone}>
+                <CustomizedTables user={user} />
+              </li>
+            ))} */}
           </header>
         </div>
       </ThemeProvider>
