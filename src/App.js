@@ -4,7 +4,7 @@ import firebase from "./firebase";
 import { DiagnosisInput } from "./components/DiagnosisInput";
 import NavBar from "./components/NavBar";
 // import { CustomizedTables } from "./components/CustomizedTables";
-import Container from "@material-ui/core/Container";
+// import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Container";
 import Button from "@material-ui/core/Button";
 // import DataGrid from "@material-ui/core/DataGrid";
@@ -59,33 +59,22 @@ function App() {
     fetchData();
   }, []);
 
-  // React.useEffect(() => {
-  //   const fetchData = async () => {
-  //     const db = firebase.firestore();
-  //     const data = await db.collection("userDiagnosis").get();
-  //     setUsers(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-  //   };
-  //   fetchData();
-  // }, []);
-
   return (
-    <Container maxWidth="xd">
-      <ThemeProvider theme={theme}>
-        <div className="App">
-          <header className="App-header">
-            <NavBar />
+    <ThemeProvider theme={theme}>
+      <div className="App">
+        <header className="App-header">
+          <NavBar />
 
-            <ol>
-              {diagnosis.map((diagnose) => (
-                <li key={diagnose.id}>
-                  <DiagnosisInput diagnose={diagnose} />
-                </li>
-              ))}
-            </ol>
-          </header>
-        </div>
-      </ThemeProvider>
-    </Container>
+          <ol>
+            {diagnosis.map((diagnose) => (
+              <li key={diagnose.id}>
+                <DiagnosisInput diagnose={diagnose} />
+              </li>
+            ))}
+          </ol>
+        </header>
+      </div>
+    </ThemeProvider>
   );
 }
 

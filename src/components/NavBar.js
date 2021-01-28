@@ -14,7 +14,7 @@ export default class NavBar extends Component {
           <IconButton>
             <MenuIcon />
           </IconButton>
-          <Typography variant="h5">
+          <Typography variant="h6">
             Victoria Falls Mascot Admin Panel
           </Typography>
           <Button variant="small" color="primary">
