@@ -42,38 +42,12 @@ const theme = createMuiTheme({
   },
 });
 
-function ButtonStyled() {
-  const classes = useStyles();
-  return <Button className={classes.root}>Test Styled Buttons</Button>;
-}
-
 function App() {
-  // // userDiagnosis state
-  // const [diagnosis, setDiagnosis] = React.useState([]);
-  // // const [users, setUsers] = React.useState([]);
-
-  // React.useEffect(() => {
-  //   const fetchData = async () => {
-  //     const db = firebase.firestore();
-  //     const data = await db.collection("userDiagnosis").get();
-  //     setDiagnosis(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-  //   };
-  //   fetchData();
-  // }, []);
-
   return (
     <ThemeProvider theme={theme}>
       <div className="App">
         <header className="App-header">
           <NavBar />
-
-          {/* <ol>
-            {diagnosis.map((diagnose) => (
-              <li key={diagnose.id}>
-                <DiagnosisInput diagnose={diagnose} />
-              </li>
-            ))}
-          </ol> */}
           <DataFetch />
         </header>
         <Footer />
