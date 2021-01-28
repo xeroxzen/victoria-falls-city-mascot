@@ -1,8 +1,10 @@
 import React from "react";
 import "./App.css";
 import firebase from "./firebase";
-import { DiagnosisInput } from "./components/DiagnosisInput";
+// import { DiagnosisInput } from "./components/DiagnosisInput";
 import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
+import DataFetch from "./components/DataFetch";
 // import { CustomizedTables } from "./components/CustomizedTables";
 // import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Container";
@@ -46,18 +48,18 @@ function ButtonStyled() {
 }
 
 function App() {
-  // userDiagnosis state
-  const [diagnosis, setDiagnosis] = React.useState([]);
-  // const [users, setUsers] = React.useState([]);
+  // // userDiagnosis state
+  // const [diagnosis, setDiagnosis] = React.useState([]);
+  // // const [users, setUsers] = React.useState([]);
 
-  React.useEffect(() => {
-    const fetchData = async () => {
-      const db = firebase.firestore();
-      const data = await db.collection("userDiagnosis").get();
-      setDiagnosis(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-    };
-    fetchData();
-  }, []);
+  // React.useEffect(() => {
+  //   const fetchData = async () => {
+  //     const db = firebase.firestore();
+  //     const data = await db.collection("userDiagnosis").get();
+  //     setDiagnosis(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+  //   };
+  //   fetchData();
+  // }, []);
 
   return (
     <ThemeProvider theme={theme}>
@@ -65,14 +67,16 @@ function App() {
         <header className="App-header">
           <NavBar />
 
-          <ol>
+          {/* <ol>
             {diagnosis.map((diagnose) => (
               <li key={diagnose.id}>
                 <DiagnosisInput diagnose={diagnose} />
               </li>
             ))}
-          </ol>
+          </ol> */}
+          <DataFetch />
         </header>
+        <Footer />
       </div>
     </ThemeProvider>
   );
