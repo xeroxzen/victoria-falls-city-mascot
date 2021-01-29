@@ -13,7 +13,7 @@ export const RecommendationInput = ({ recommendations }) => {
   const onUpdate = () => {
     const db = firebase.firestore();
     db.collection("Recommendation")
-      .doc(date.id)
+      .doc(recommendations.id)
       .set({ ...recommendations, date, recommendation });
   };
 
