@@ -1,12 +1,10 @@
 import React from "react";
-import { Component } from "react";
 import firebase from "../firebase";
 import { RecommendationInput } from "./DiagnosisInput";
 
 function RecommendationData() {
-  // userDiagnosis state
+  // Recommendation state here
   const [recommendations, setRecommendations] = React.useState([]);
-  // const [users, setUsers] = React.useState([]);
 
   React.useEffect(() => {
     const fetchData = async () => {
