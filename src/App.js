@@ -1,14 +1,13 @@
 import React from "react";
 import "./App.css";
-import firebase from "./firebase";
+// import firebase from "./firebase";
 // import { DiagnosisInput } from "./components/DiagnosisInput";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import DataFetch from "./components/DataFetch";
+import Admin from "./components/Admin";
 // import { CustomizedTables } from "./components/CustomizedTables";
-// import Container from "@material-ui/core/Container";
-import Typography from "@material-ui/core/Container";
-import Button from "@material-ui/core/Button";
+import Container from "@material-ui/core/Container";
 // import DataGrid from "@material-ui/core/DataGrid";
 // eslint-disable-next-line;
 // import { withStyles, makeStyles } from "@material-ui/core/styles";
@@ -44,15 +43,20 @@ const theme = createMuiTheme({
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <div className="App">
-        <header className="App-header">
-          <NavBar />
-          <DataFetch />
-        </header>
-        <Footer />
-      </div>
-    </ThemeProvider>
+    <React.Fragment>
+      <Container maxWidth="lg">
+        <ThemeProvider theme={theme}>
+          <div className="App">
+            <header className="App-header">
+              <NavBar />
+              <Admin />
+              <DataFetch />
+            </header>
+            <Footer />
+          </div>
+        </ThemeProvider>
+      </Container>
+    </React.Fragment>
   );
 }
 

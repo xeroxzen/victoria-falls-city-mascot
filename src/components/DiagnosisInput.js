@@ -69,7 +69,7 @@ export const DiagnosisInput = ({ diagnose }) => {
         Update
       </Button>
       <Button
-        variant="contained"
+        variant="disabled"
         size="small"
         color="secondary"
         endIcon={<DeleteIcon />}
