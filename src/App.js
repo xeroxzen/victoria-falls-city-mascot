@@ -1,12 +1,15 @@
 import React from "react";
 import "./App.css";
-import firebase from "./firebase";
-import { DiagnosisInput } from "./components/DiagnosisInput";
+// import firebase from "./firebase";
+// import { DiagnosisInput } from "./components/DiagnosisInput";
 import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
+import DiagnosisData from "./components/DiagnosisData";
+import RecommendationData from "./components/RecommendationData";
+import ComplaintsData from "./components/ComplaintsData";
+import Admin from "./components/Admin";
 // import { CustomizedTables } from "./components/CustomizedTables";
-// import Container from "@material-ui/core/Container";
-import Typography from "@material-ui/core/Container";
-import Button from "@material-ui/core/Button";
+import Container from "@material-ui/core/Container";
 // import DataGrid from "@material-ui/core/DataGrid";
 // eslint-disable-next-line;
 // import { withStyles, makeStyles } from "@material-ui/core/styles";
@@ -40,41 +43,24 @@ const theme = createMuiTheme({
   },
 });
 
-function ButtonStyled() {
-  const classes = useStyles();
-  return <Button className={classes.root}>Test Styled Buttons</Button>;
-}
-
 function App() {
-  // userDiagnosis state
-  const [diagnosis, setDiagnosis] = React.useState([]);
-  // const [users, setUsers] = React.useState([]);
-
-  React.useEffect(() => {
-    const fetchData = async () => {
-      const db = firebase.firestore();
-      const data = await db.collection("userDiagnosis").get();
-      setDiagnosis(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-    };
-    fetchData();
-  }, []);
-
   return (
-    <ThemeProvider theme={theme}>
-      <div className="App">
-        <header className="App-header">
-          <NavBar />
-
-          <ol>
-            {diagnosis.map((diagnose) => (
-              <li key={diagnose.id}>
-                <DiagnosisInput diagnose={diagnose} />
-              </li>
-            ))}
-          </ol>
-        </header>
-      </div>
-    </ThemeProvider>
+    <React.Fragment>
+      <Container maxWidth="lg">
+        <ThemeProvider theme={theme}>
+          <div className="App">
+            <header className="App-header">
+              <NavBar />
+              <Admin />
+              <DiagnosisData />
+              <RecommendationData />
+              <ComplaintsData />
+            </header>
+            <Footer />
+          </div>
+        </ThemeProvider>
+      </Container>
+    </React.Fragment>
   );
 }
 

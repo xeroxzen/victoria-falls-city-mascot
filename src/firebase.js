@@ -1,14 +1,14 @@
 import firebase from "firebase";
 
 const config = {
-  apiKey: "AIzaSyChqDrr0pIc0V9qJj2vsxSQEGhy1AbxOEg",
-  authDomain: "victoriafallsmascot-imwo.firebaseapp.com",
-  databaseURL: "https://victoriafallsmascot-imwo.firebaseio.com",
-  projectId: "victoriafallsmascot-imwo",
-  storageBucket: "victoriafallsmascot-imwo.appspot.com",
-  messagingSenderId: "880901922463",
-  appId: "1:880901922463:web:d280cecb45cb293c99ccaa",
-  measurementId: "G-STQS2VXKYL",
+  apiKey: process.env.REACT_APP_FIREBASE_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_DOMAIN,
+  databaseURL: process.env.REACT_APP_FIREBASE_DATABASE,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_SENDER_ID,
+  appId: process.env.REACT_APP_MESSAGING_APP_ID,
+  measurementId: process.env.REACT_APP_MEASUREMENT_ID,
 };
 // Initialize Firebase
 firebase.initializeApp(config);
