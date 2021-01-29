@@ -1,0 +1,35 @@
+import React from "react";
+import { Component } from "react";
+import firebase from "../firebase";
+import { RecommendationInput } from "./DiagnosisInput";
+
+function RecommendationData() {
+  // userDiagnosis state
+  const [recommendations, setRecommendations] = React.useState([]);
+  // const [users, setUsers] = React.useState([]);
+
+  React.useEffect(() => {
+    const fetchData = async () => {
+      const db = firebase.firestore();
+      const data = await db.collection("Recommendation").get();
+      setRecommendations(
+        data.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
+      );
+    };
+    fetchData();
+  }, []);
+
+  return (
+    <div>
+      <ol>
+        {recommendations.map((recommendation) => (
+          <li key={recommendation.id}>
+            <RecommendationInput recommendation={recommendation} />
+          </li>
+        ))}
+      </ol>
+    </div>
+  );
+}
+
+export default RecommendationData;
