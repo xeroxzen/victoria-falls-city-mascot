@@ -1,12 +1,10 @@
 import React from "react";
-import { Component } from "react";
 import firebase from "../firebase";
-import { ComplaintsInput } from "./DiagnosisInput";
+import { ComplaintsInput } from "./ComplaintsInput";
 
 function ComplaintsData() {
   // userDiagnosis state
   const [complaints, setComplaints] = React.useState([]);
-  // const [users, setUsers] = React.useState([]);
 
   React.useEffect(() => {
     const fetchData = async () => {

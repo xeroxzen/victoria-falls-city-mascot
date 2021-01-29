@@ -1,5 +1,4 @@
 import React from "react";
-import { Component } from "react";
 import firebase from "../firebase";
 import { DiagnosisInput } from "./DiagnosisInput";
 

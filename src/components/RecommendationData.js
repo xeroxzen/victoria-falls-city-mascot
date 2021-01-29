@@ -1,6 +1,6 @@
 import React from "react";
 import firebase from "../firebase";
-import { RecommendationInput } from "./DiagnosisInput";
+import { RecommendationInput } from "./RecommendationInput";
 
 function RecommendationData() {
   // Recommendation state here
