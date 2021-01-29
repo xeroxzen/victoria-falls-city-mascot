@@ -17,7 +17,7 @@ export const RecommendationInput = ({ data }) => {
 
   const onDelete = () => {
     const db = firebase.firestore();
-    db.collection("userDiagnosis").doc(data.id).delete();
+    db.collection("Recommendation").doc(data.id).delete();
   };
 
   return (
