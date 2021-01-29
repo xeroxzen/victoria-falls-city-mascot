@@ -1,7 +1,6 @@
 import React from "react";
 import firebase from "../firebase";
 import Button from "@material-ui/core/Button";
-import { Table, TableHead, TableBody, TableRow } from "@material-ui/core";
 import DeleteIcon from "@material-ui/icons/Delete";
 import SaveIcon from "@material-ui/icons/Save";
 
@@ -56,8 +55,7 @@ export const DiagnosisInput = ({ diagnose }) => {
           setAgeRange(e.target.value);
         }}
       />
-      {/* <button onClick={onUpdate}>Update</button> */}
-      {/* <button onClick={onDelete}>Delete</button> */}
+
       <Button
         variant="contained"
         size="small"

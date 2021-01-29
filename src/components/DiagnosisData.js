@@ -6,7 +6,6 @@ import { DiagnosisInput } from "./DiagnosisInput";
 function DiagnosisData() {
   // userDiagnosis state
   const [diagnosis, setDiagnosis] = React.useState([]);
-  // const [users, setUsers] = React.useState([]);
 
   React.useEffect(() => {
     const fetchData = async () => {
