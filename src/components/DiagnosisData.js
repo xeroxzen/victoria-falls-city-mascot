@@ -3,7 +3,7 @@ import { Component } from "react";
 import firebase from "../firebase";
 import { DiagnosisInput } from "./DiagnosisInput";
 
-function DataFetch() {
+function DiagnosisData() {
   // userDiagnosis state
   const [diagnosis, setDiagnosis] = React.useState([]);
   // const [users, setUsers] = React.useState([]);
@@ -30,4 +30,4 @@ function DataFetch() {
   );
 }
 
-export default DataFetch;
+export default DiagnosisData;

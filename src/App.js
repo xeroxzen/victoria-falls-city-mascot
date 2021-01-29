@@ -4,7 +4,7 @@ import "./App.css";
 // import { DiagnosisInput } from "./components/DiagnosisInput";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
-import DataFetch from "./components/DataFetch";
+import DiagnosisData from "./components/DiagnosisData";
 import Admin from "./components/Admin";
 // import { CustomizedTables } from "./components/CustomizedTables";
 import Container from "@material-ui/core/Container";
@@ -50,7 +50,7 @@ function App() {
             <header className="App-header">
               <NavBar />
               <Admin />
-              <DataFetch />
+              <DiagnosisData />
             </header>
             <Footer />
           </div>
