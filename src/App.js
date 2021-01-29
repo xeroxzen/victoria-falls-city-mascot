@@ -5,6 +5,8 @@ import "./App.css";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import DiagnosisData from "./components/DiagnosisData";
+import RecommendationData from "./components/RecommendationData";
+import ComplaintsData from "./components/ComplaintsData";
 import Admin from "./components/Admin";
 // import { CustomizedTables } from "./components/CustomizedTables";
 import Container from "@material-ui/core/Container";
@@ -51,6 +53,8 @@ function App() {
               <NavBar />
               <Admin />
               <DiagnosisData />
+              <RecommendationData />
+              <ComplaintsData />
             </header>
             <Footer />
           </div>
