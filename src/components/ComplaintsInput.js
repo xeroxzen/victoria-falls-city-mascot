@@ -6,14 +6,14 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import SaveIcon from "@material-ui/icons/Save";
 
 export const ComplaintsInput = ({ data }) => {
-  const [time, setTime] = React.useState(data.time);
+  const [date, setDate] = React.useState(data.time);
   const [complaint, setComplaint] = React.useState(data.complaint);
 
   const onUpdate = () => {
     const db = firebase.firestore();
     db.collection("Complaints")
       .doc(data.id)
-      .set({ ...data, time, complaint });
+      .set({ ...data, date, complaint });
   };
 
   const onDelete = () => {
@@ -30,9 +30,9 @@ export const ComplaintsInput = ({ data }) => {
         }}
       />
       <input
-        value={time}
+        value={date}
         onChange={(e) => {
-          setTime(e.target.value);
+          setDate(e.target.value);
         }}
       />
 
