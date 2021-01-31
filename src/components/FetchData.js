@@ -12,7 +12,7 @@ function FetchData() {
   React.useEffect(() => {
     const fetchData = async () => {
       const db = firebase.firestore();
-      const data = await db.collection("userDiagnosis").get();
+      const data = await db.collection("interactions").get();
       setDiagnosis(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     };
     fetchData();
@@ -22,7 +22,7 @@ function FetchData() {
   React.useEffect(() => {
     const getData = async () => {
       const db = firebase.firestore();
-      const data = await db.collection("Recommendation").get();
+      const data = await db.collection("interactions").get();
       setRecommendations(
         data.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
       );
@@ -34,7 +34,7 @@ function FetchData() {
   React.useEffect(() => {
     const readData = async () => {
       const db = firebase.firestore();
-      const data = await db.collection("Complaints").get();
+      const data = await db.collection("interactions").get();
       setComplaints(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     };
     readData();
@@ -49,7 +49,7 @@ function FetchData() {
           </li>
         ))}
       </ol>
-
+      <br />
       <ol>
         {recommendations.map((recommend) => (
           <li key={recommend.id}>
@@ -57,6 +57,7 @@ function FetchData() {
           </li>
         ))}
       </ol>
+      <br />
       <ol>
         {complaints.map((complaint) => (
           <li key={complaint.id}>
