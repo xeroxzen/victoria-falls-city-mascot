@@ -41,6 +41,7 @@ const theme = createMuiTheme({
 
 function App() {
   const [interactions, setInteractions] = React.useState([]);
+  const [complaints, setComplaints] = React.useState([]);
 
   React.useEffect(() => {
     const fetchData = async () => {
@@ -50,6 +51,15 @@ function App() {
     };
     fetchData();
   }, []);
+
+  // React.useEffect(() => {
+  //   const getData = async () => {
+  //     const db = firebase.firestore();
+  //     const data = await db.collection("Complaints").get();
+  //     setComplaints(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+  //   };
+  //   getData();
+  // }, []);
 
   return (
     <React.Fragment>
@@ -64,6 +74,12 @@ function App() {
                 {interactions.map((interaction) => (
                   <li key={interaction.id}>
                     <InteractionsInput interaction={interaction} />
+                  </li>
+                ))}
+
+                {complaints.map((complaint) => (
+                  <li key={complaint.id}>
+                    <InteractionsInput complaint={complaint} />
                   </li>
                 ))}
               </ul>

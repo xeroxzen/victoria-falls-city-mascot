@@ -59,7 +59,7 @@ export const InteractionsInput = ({ interaction }) => {
           setAge(e.target.value);
         }}
       />
-      <input
+      {/* <input
         value={complaint}
         onChange={(e) => {
           setComplaint(e.target.value);
@@ -70,7 +70,7 @@ export const InteractionsInput = ({ interaction }) => {
         onChange={(e) => {
           setRecommendation(e.target.value);
         }}
-      />
+      /> */}
 
       <Button
         variant="contained"
