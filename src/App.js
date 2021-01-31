@@ -6,7 +6,7 @@ import Footer from "./components/Footer";
 // import DiagnosisData from "./components/DiagnosisData";
 // import RecommendationData from "./components/RecommendationData";
 // import ComplaintsData from "./components/ComplaintsData";
-import InteractionsInput from "./components/InteractionsInput";
+import { InteractionsInput } from "./components/InteractionsInput";
 import Admin from "./components/Admin";
 import Container from "@material-ui/core/Container";
 // import Paper from "@material-ui/core/Paper";
