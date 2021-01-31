@@ -2,7 +2,7 @@ import React from "react";
 import firebase from "../firebase";
 import { InteractionsInput } from "./InteractionsInput";
 
-function FetchData() {
+function InteractionsData() {
   // userDiagnosis state
   const [diagnosis, setDiagnosis] = React.useState([]);
   const [complaints, setComplaints] = React.useState([]);
@@ -70,4 +70,4 @@ function FetchData() {
   );
 }
 
-export default FetchData;
+export default InteractionsData;
