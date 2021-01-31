@@ -4,27 +4,27 @@ import Button from "@material-ui/core/Button";
 import DeleteIcon from "@material-ui/icons/Delete";
 import SaveIcon from "@material-ui/icons/Save";
 
-export const FetchInput = ({ diagnose }) => {
-  const [phone, setPhone] = React.useState(diagnose.phone);
-  const [symptoms, setSymptoms] = React.useState(diagnose.symptoms);
-  const [time, setTime] = React.useState(diagnose.time);
-  const [ageRange, setAgeRange] = React.useState(diagnose.ageRange);
-  const [gender, setGender] = React.useState(diagnose.gender);
-  const [complaint, setComplaint] = React.useState(diagnose.complaint);
+export const InteractionsInput = ({ interaction }) => {
+  const [phone, setPhone] = React.useState(interaction.phone);
+  const [symptom, setSymptom] = React.useState(interaction.symptoms);
+  const [time, setTime] = React.useState(interaction.time);
+  const [age, setAge] = React.useState(interaction.ageRange);
+  const [gender, setGender] = React.useState(interaction.gender);
+  const [complaint, setComplaint] = React.useState(interaction.complaint);
   const [recommendation, setRecommendation] = React.useState(
-    diagnose.recommendation
+    interaction.recommendation
   );
 
   const onUpdate = () => {
     const db = firebase.firestore();
-    db.collection("userDiagnosis")
-      .doc(diagnose.id)
-      .set({ ...diagnose, phone, symptoms, time, ageRange, gender });
+    db.collection("interactions")
+      .doc(interaction.id)
+      .set({ ...interaction, phone, symptom, time, age, gender });
   };
 
   const onDelete = () => {
     const db = firebase.firestore();
-    db.collection("userDiagnosis").doc(diagnose.id).delete();
+    db.collection("interactions").doc(interaction.id).delete();
   };
 
   return (
@@ -42,9 +42,9 @@ export const FetchInput = ({ diagnose }) => {
         }}
       />
       <input
-        value={symptoms}
+        value={symptom}
         onChange={(e) => {
-          setSymptoms(e.target.value);
+          setSymptom(e.target.value);
         }}
       />
       <input
@@ -54,9 +54,9 @@ export const FetchInput = ({ diagnose }) => {
         }}
       />
       <input
-        value={ageRange}
+        value={age}
         onChange={(e) => {
-          setAgeRange(e.target.value);
+          setAge(e.target.value);
         }}
       />
       <input

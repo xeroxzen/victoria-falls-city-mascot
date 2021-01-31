@@ -1,6 +1,6 @@
 import React from "react";
 import firebase from "../firebase";
-import { FetchInput } from "./FetchInput";
+import { InteractionsInput } from "./InteractionsInput";
 
 function FetchData() {
   // userDiagnosis state
@@ -45,7 +45,7 @@ function FetchData() {
       <ol>
         {diagnosis.map((diagnose) => (
           <li key={diagnose.id}>
-            <FetchInput diagnose={diagnose} />
+            <InteractionsInput diagnose={diagnose} />
           </li>
         ))}
       </ol>
@@ -53,7 +53,7 @@ function FetchData() {
       <ol>
         {recommendations.map((recommend) => (
           <li key={recommend.id}>
-            <FetchInput recommend={recommend} />
+            <InteractionsInput recommend={recommend} />
           </li>
         ))}
       </ol>
@@ -61,7 +61,7 @@ function FetchData() {
       <ol>
         {complaints.map((complaint) => (
           <li key={complaint.id}>
-            <FetchInput complaint={complaint} />
+            <InteractionsInput complaint={complaint} />
           </li>
         ))}
       </ol>

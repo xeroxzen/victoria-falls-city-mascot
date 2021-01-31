@@ -1,11 +1,12 @@
 import React from "react";
 import "./App.css";
+import firebase from "./firebase";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 // import DiagnosisData from "./components/DiagnosisData";
 // import RecommendationData from "./components/RecommendationData";
 // import ComplaintsData from "./components/ComplaintsData";
-import FetchData from "./components/FetchData";
+import InteractionsInput from "./components/InteractionsInput";
 import Admin from "./components/Admin";
 import Container from "@material-ui/core/Container";
 // import Paper from "@material-ui/core/Paper";
@@ -39,6 +40,17 @@ const theme = createMuiTheme({
 });
 
 function App() {
+  const [interactions, setInteractions] = React.useState([]);
+
+  React.useEffect(() => {
+    const fetchData = async () => {
+      const db = firebase.firestore();
+      const data = await db.collection("interactions").get();
+      setInteractions(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    };
+    fetchData();
+  }, []);
+
   return (
     <React.Fragment>
       <Container maxWidth="lg">
@@ -47,7 +59,14 @@ function App() {
             <header className="App-header">
               <NavBar />
               <Admin />
-              <FetchData />  
+              {/* <FetchData /> */}
+              <ul>
+                {interactions.map((interaction) => (
+                  <li key={interaction.id}>
+                    <InteractionsInput interaction={interaction} />
+                  </li>
+                ))}
+              </ul>
             </header>
             <Footer />
           </div>
