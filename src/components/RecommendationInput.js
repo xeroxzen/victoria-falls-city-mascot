@@ -4,22 +4,22 @@ import Button from "@material-ui/core/Button";
 import DeleteIcon from "@material-ui/icons/Delete";
 import SaveIcon from "@material-ui/icons/Save";
 
-export const RecommendationInput = ({ recommend }) => {
-  const [date, setDate] = React.useState(recommend.date);
+export const RecommendationInput = ({ interaction }) => {
+  const [date, setDate] = React.useState(interaction.date);
   const [recommendation, setRecommendation] = React.useState(
-    recommend.recommendation
+    interaction.recommendation
   );
 
   const onUpdate = () => {
     const db = firebase.firestore();
     db.collection("Recommendation")
-      .doc(recommend.id)
-      .set({ ...recommend, date, recommendation });
+      .doc(interaction.id)
+      .set({ ...interaction, date, recommendation });
   };
 
   const onDelete = () => {
     const db = firebase.firestore();
-    db.collection("Recommendation").doc(recommend.id).delete();
+    db.collection("Recommendation").doc(interaction.id).delete();
   };
 
   return (
