@@ -1,23 +1,25 @@
 import React from "react";
 import "./App.css";
-import NavBar from "./components/NavBar";
-import MiniDrawer from "./components/SideBar";
+// import NavBar from "./components/NavBar";
+// import MiniDrawer from "./components/SideBar";
+import PermanentDrawerLeft from "./components/SideNavBar";
 import Footer from "./components/Footer";
 import DiagnosisData from "./components/DiagnosisData";
 import RecommendationData from "./components/RecommendationData";
 import ComplaintsData from "./components/ComplaintsData";
 import Admin from "./components/Admin";
+import DiagnosisTable from "./components/DiagnosisTable";
 import Container from "@material-ui/core/Container";
-// import Paper from "@material-ui/core/Paper";
-
 import "@fontsource/roboto";
+import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+import teal from "@material-ui/core/colors/teal";
 
-import {
-  // makeStyles,
-  ThemeProvider,
-  createMuiTheme,
-} from "@material-ui/core/styles";
-import { orange, dark } from "@material-ui/core/colors";
+// import {
+//   // makeStyles,
+//   ThemeProvider,
+//   createMuiTheme,
+// } from "@material-ui/core/styles";
+// import { orange, dark } from "@material-ui/core/colors";
 // import purple from "material-ui/colors/purple";
 
 // const useStyles = makeStyles({
@@ -34,10 +36,21 @@ import { orange, dark } from "@material-ui/core/colors";
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: "#2E4053",
+      main: teal[600],
+    },
+    secondary: {
+      main: "#00897b",
     },
   },
 });
+
+// const theme = createMuiTheme({
+//   palette: {
+//     primary: {
+//       main: "#2E4053",
+//     },
+//   },
+// });
 
 function App() {
   return (
@@ -49,10 +62,9 @@ function App() {
             {/* <NavBar /> */}
             <Admin />
             {/* </header> */}
-            <MiniDrawer />
-            <DiagnosisData />
-            <ComplaintsData />
-            <RecommendationData />
+            <PermanentDrawerLeft />
+
+            <DiagnosisTable />
             <Footer />
           </div>
         </ThemeProvider>

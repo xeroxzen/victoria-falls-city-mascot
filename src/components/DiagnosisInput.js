@@ -11,17 +11,17 @@ export const DiagnosisInput = ({ interaction }) => {
   const [ageRange, setAgeRange] = React.useState(interaction.ageRange);
   const [gender, setGender] = React.useState(interaction.gender);
 
-  // const onUpdate = () => {
-  //   const db = firebase.firestore();
-  //   db.collection("userDiagnosis")
-  //     .doc(interaction.id)
-  //     .set({ ...interaction, phone, symptoms, time, ageRange, gender });
-  // };
+  const onUpdate = () => {
+    const db = firebase.firestore();
+    db.collection("userDiagnosis")
+      .doc(interaction.id)
+      .set({ ...interaction, phone, symptoms, time, ageRange, gender });
+  };
 
-  // const onDelete = () => {
-  //   const db = firebase.firestore();
-  //   db.collection("userDiagnosis").doc(interaction.id).delete();
-  // };
+  const onDelete = () => {
+    const db = firebase.firestore();
+    db.collection("userDiagnosis").doc(interaction.id).delete();
+  };
 
   return (
     <>

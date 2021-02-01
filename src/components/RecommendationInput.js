@@ -37,7 +37,7 @@ export const RecommendationInput = ({ interaction }) => {
         }}
       />
 
-      <Button
+      {/* <Button
         variant="contained"
         size="small"
         color="primary"
@@ -56,7 +56,7 @@ export const RecommendationInput = ({ interaction }) => {
         onClick={onDelete}
       >
         Delete
-      </Button>
+      </Button> */}
     </>
   );
 };

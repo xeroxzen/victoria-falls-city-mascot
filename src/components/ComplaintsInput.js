@@ -35,7 +35,7 @@ export const ComplaintsInput = ({ interaction }) => {
         }}
       />
 
-      <Button
+      {/* <Button
         variant="contained"
         size="small"
         color="primary"
@@ -54,7 +54,7 @@ export const ComplaintsInput = ({ interaction }) => {
         onClick={onDelete}
       >
         Delete
-      </Button>
+      </Button> */}
     </>
   );
 };
