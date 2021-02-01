@@ -20,7 +20,7 @@ function DiagnosisData() {
       <ol>
         {diagnosis.map((diagnose) => (
           <li key={diagnose.id}>
-            <DiagnosisInput diagnose={diagnose} />
+            <DiagnosisInput interaction={diagnose} />
           </li>
         ))}
       </ol>
