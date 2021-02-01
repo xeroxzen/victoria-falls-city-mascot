@@ -4,23 +4,23 @@ import Button from "@material-ui/core/Button";
 import DeleteIcon from "@material-ui/icons/Delete";
 import SaveIcon from "@material-ui/icons/Save";
 
-export const DiagnosisInput = ({ diagnose }) => {
-  const [phone, setPhone] = React.useState(diagnose.phone);
-  const [symptoms, setSymptoms] = React.useState(diagnose.symptoms);
-  const [time, setTime] = React.useState(diagnose.time);
-  const [ageRange, setAgeRange] = React.useState(diagnose.ageRange);
-  const [gender, setGender] = React.useState(diagnose.gender);
+export const DiagnosisInput = ({ interaction }) => {
+  const [phone, setPhone] = React.useState(interaction.phone);
+  const [symptoms, setSymptoms] = React.useState(interaction.symptoms);
+  const [time, setTime] = React.useState(interaction.time);
+  const [ageRange, setAgeRange] = React.useState(interaction.ageRange);
+  const [gender, setGender] = React.useState(interaction.gender);
 
   const onUpdate = () => {
     const db = firebase.firestore();
     db.collection("userDiagnosis")
-      .doc(diagnose.id)
-      .set({ ...diagnose, phone, symptoms, time, ageRange, gender });
+      .doc(interaction.id)
+      .set({ ...interaction, phone, symptoms, time, ageRange, gender });
   };
 
   const onDelete = () => {
     const db = firebase.firestore();
-    db.collection("userDiagnosis").doc(diagnose.id).delete();
+    db.collection("userDiagnosis").doc(interaction.id).delete();
   };
 
   return (
