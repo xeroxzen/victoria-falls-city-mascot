@@ -40,26 +40,28 @@ const theme = createMuiTheme({
 });
 
 function App() {
-  const [interactions, setInteractions] = React.useState([]);
+  const [diagnosis, setDiagnosis] = React.useState([]);
   const [complaints, setComplaints] = React.useState([]);
 
   React.useEffect(() => {
     const fetchData = async () => {
       const db = firebase.firestore();
-      const data = await db.collection("interactions").get();
-      setInteractions(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+      const data = await db.collection("userDiagnosis").get();
+      setDiagnosis(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     };
     fetchData();
   }, []);
 
-  // React.useEffect(() => {
-  //   const getData = async () => {
-  //     const db = firebase.firestore();
-  //     const data = await db.collection("Complaints").get();
-  //     setComplaints(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-  //   };
-  //   getData();
-  // }, []);
+  React.useEffect(() => {
+    const fetchData = async () => {
+      const db = firebase.firestore();
+      const complaintsRef = await db.collection("Complaints").get();
+      setComplaints(
+        complaintsRef.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
+      );
+    };
+    fetchData();
+  }, []);
 
   return (
     <React.Fragment>
@@ -71,15 +73,15 @@ function App() {
               <Admin />
               {/* <FetchData /> */}
               <ul>
-                {interactions.map((interaction) => (
-                  <li key={interaction.id}>
-                    <InteractionsInput interaction={interaction} />
+                {complaints.map((complaint) => (
+                  <li key={complaint.id}>
+                    <InteractionsInput interaction={complaint} />
                   </li>
                 ))}
 
-                {complaints.map((complaint) => (
-                  <li key={complaint.id}>
-                    <InteractionsInput complaint={complaint} />
+                {diagnosis.map((diagnose) => (
+                  <li key={diagnose.id}>
+                    <InteractionsInput interaction={diagnose} />
                   </li>
                 ))}
               </ul>
