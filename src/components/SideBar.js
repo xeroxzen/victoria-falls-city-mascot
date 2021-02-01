@@ -18,6 +18,11 @@ import ListItemText from "@material-ui/core/ListItemText";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
 import HomeIcon from "@material-ui/icons/Home";
+import LocalHospital from "@material-ui/icons/LocalHospital";
+import CalendarToday from "@material-ui/icons/CalendarToday";
+import AccountCircle from "@material-ui/icons/AccountCircle";
+import WbIncandescent from "@material-ui/icons/WbIncandescent";
+import ThumbDown from "@material-ui/icons/ThumbDown";
 
 const drawerWidth = 240;
 
@@ -146,15 +151,10 @@ export default function MiniDrawer() {
         </div>
         <Divider />
         <List>
-          {[
-            "Mascot Dashboard",
-            "Diagnosis Responses",
-            "Complaints",
-            "Responses",
-          ].map((text, index) => (
+          {["Mascot Dashboard", "Diagnosis Responses"].map((text, index) => (
             <ListItem button key={text}>
               <ListItemIcon>
-                {index % 2 === 0 ? <HomeIcon /> : <MailIcon />}
+                {index % 2 === 0 ? <HomeIcon /> : <LocalHospital />}
               </ListItemIcon>
               <ListItemText primary={text} />
             </ListItem>
@@ -162,10 +162,21 @@ export default function MiniDrawer() {
         </List>
         <Divider />
         <List>
-          {["All mail", "Trash", "Spam"].map((text, index) => (
+          {["Recommendations", "Complaints"].map((text, index) => (
             <ListItem button key={text}>
               <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                {index % 2 === 0 ? <WbIncandescent /> : <ThumbDown />}
+              </ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItem>
+          ))}
+        </List>
+        <Divider />
+        <List>
+          {["Calendar", "Register/Login"].map((text, index) => (
+            <ListItem button key={text}>
+              <ListItemIcon>
+                {index % 2 === 0 ? <CalendarToday /> : <AccountCircle />}
               </ListItemIcon>
               <ListItemText primary={text} />
             </ListItem>
