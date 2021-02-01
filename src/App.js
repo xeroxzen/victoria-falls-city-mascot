@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import NavBar from "./components/NavBar";
+import MiniDrawer from "./components/SideBar";
 import Footer from "./components/Footer";
 import DiagnosisData from "./components/DiagnosisData";
 import RecommendationData from "./components/RecommendationData";
@@ -46,6 +47,7 @@ function App() {
             <header className="App-header">
               <NavBar />
               <Admin />
+              <MiniDrawer />
               <DiagnosisData />
               <ComplaintsData />
               <RecommendationData />
