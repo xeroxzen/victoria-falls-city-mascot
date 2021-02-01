@@ -17,7 +17,8 @@ import {
   ThemeProvider,
   createMuiTheme,
 } from "@material-ui/core/styles";
-import { orange } from "@material-ui/core/colors";
+import { orange, dark } from "@material-ui/core/colors";
+import purple from "material-ui/colors/purple";
 
 // const useStyles = makeStyles({
 //   root: {
@@ -33,7 +34,7 @@ import { orange } from "@material-ui/core/colors";
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: orange[500],
+      main: "#2E4053",
     },
   },
 });
