@@ -15,8 +15,6 @@ import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
-import MailIcon from "@material-ui/icons/Mail";
 import HomeIcon from "@material-ui/icons/Home";
 import LocalHospital from "@material-ui/icons/LocalHospital";
 import CalendarToday from "@material-ui/icons/CalendarToday";
@@ -29,6 +27,7 @@ const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
+    // background: "#2E4053",
   },
   appBar: {
     zIndex: theme.zIndex.drawer + 1,
@@ -85,6 +84,7 @@ const useStyles = makeStyles((theme) => ({
   content: {
     flexGrow: 1,
     padding: theme.spacing(3),
+    background: "#2E4053",
   },
 }));
 

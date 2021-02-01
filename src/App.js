@@ -18,7 +18,7 @@ import {
   createMuiTheme,
 } from "@material-ui/core/styles";
 import { orange, dark } from "@material-ui/core/colors";
-import purple from "material-ui/colors/purple";
+// import purple from "material-ui/colors/purple";
 
 // const useStyles = makeStyles({
 //   root: {
@@ -45,14 +45,14 @@ function App() {
       <Container maxWidth="lg">
         <ThemeProvider theme={theme}>
           <div className="App">
-            <header className="App-header">
-              <NavBar />
-              <Admin />
-              <MiniDrawer />
-              <DiagnosisData />
-              <ComplaintsData />
-              <RecommendationData />
-            </header>
+            {/* <header className="App-header"> */}
+            {/* <NavBar /> */}
+            <Admin />
+            {/* </header> */}
+            <MiniDrawer />
+            <DiagnosisData />
+            <ComplaintsData />
+            <RecommendationData />
             <Footer />
           </div>
         </ThemeProvider>

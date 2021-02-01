@@ -14,7 +14,7 @@ export default function Admin() {
 
   return (
     <React.Fragment>
-      <Typography variant="large">DASHBOARD</Typography>
+      <Typography variant="h4">DASHBOARD</Typography>
     </React.Fragment>
   );
 }
