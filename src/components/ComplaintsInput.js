@@ -4,20 +4,20 @@ import Button from "@material-ui/core/Button";
 import DeleteIcon from "@material-ui/icons/Delete";
 import SaveIcon from "@material-ui/icons/Save";
 
-export const ComplaintsInput = ({ data }) => {
-  const [date, setDate] = React.useState(data.time);
-  const [complaint, setComplaint] = React.useState(data.complaint);
+export const ComplaintsInput = ({ interaction }) => {
+  const [date, setDate] = React.useState(interaction.date);
+  const [complaint, setComplaint] = React.useState(interaction.complaint);
 
   const onUpdate = () => {
     const db = firebase.firestore();
     db.collection("Complaints")
-      .doc(data.id)
-      .set({ ...data, date, complaint });
+      .doc(interaction.id)
+      .set({ ...interaction, date, complaint });
   };
 
   const onDelete = () => {
     const db = firebase.firestore();
-    db.collection("Complaints").doc(data.id).delete();
+    db.collection("Complaints").doc(interaction.id).delete();
   };
 
   return (
