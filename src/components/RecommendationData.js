@@ -22,7 +22,7 @@ function RecommendationData() {
       <ol>
         {recommendations.map((recommendation) => (
           <li key={recommendation.id}>
-            <RecommendationInput recommendation={recommendation} />
+            <RecommendationInput interaction={recommendation} />
           </li>
         ))}
       </ol>

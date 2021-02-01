@@ -6,7 +6,7 @@ import Footer from "./components/Footer";
 import DiagnosisData from "./components/DiagnosisData";
 import RecommendationData from "./components/RecommendationData";
 import ComplaintsData from "./components/ComplaintsData";
-import { InteractionsInput } from "./components/InteractionsInput";
+// import { InteractionsInput } from "./components/InteractionsInput";
 import Admin from "./components/Admin";
 import Container from "@material-ui/core/Container";
 // import Paper from "@material-ui/core/Paper";
@@ -40,29 +40,6 @@ const theme = createMuiTheme({
 });
 
 function App() {
-  const [diagnosis, setDiagnosis] = React.useState([]);
-  const [complaints, setComplaints] = React.useState([]);
-
-  React.useEffect(() => {
-    const fetchData = async () => {
-      const db = firebase.firestore();
-      const data = await db.collection("userDiagnosis").get();
-      setDiagnosis(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-    };
-    fetchData();
-  }, []);
-
-  React.useEffect(() => {
-    const fetchData = async () => {
-      const db = firebase.firestore();
-      const complaintsRef = await db.collection("Complaints").get();
-      setComplaints(
-        complaintsRef.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
-      );
-    };
-    fetchData();
-  }, []);
-
   return (
     <React.Fragment>
       <Container maxWidth="lg">
@@ -71,20 +48,9 @@ function App() {
             <header className="App-header">
               <NavBar />
               <Admin />
-              {/* <FetchData /> */}
-              <ul>
-                {complaints.map((complaint) => (
-                  <li key={complaint.id}>
-                    <InteractionsInput interaction={complaint} />
-                  </li>
-                ))}
-
-                {diagnosis.map((diagnose) => (
-                  <li key={diagnose.id}>
-                    <InteractionsInput interaction={diagnose} />
-                  </li>
-                ))}
-              </ul>
+              <DiagnosisData />
+              <ComplaintsData />
+              <RecommendationData />
             </header>
             <Footer />
           </div>
