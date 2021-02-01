@@ -9,8 +9,10 @@ function ComplaintsData() {
   React.useEffect(() => {
     const fetchData = async () => {
       const db = firebase.firestore();
-      const data = await db.collection("Complaints").get();
-      setComplaints(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+      const complaintsRef = await db.collection("Complaints").get();
+      setComplaints(
+        complaintsRef.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
+      );
     };
     fetchData();
   }, []);
@@ -20,7 +22,7 @@ function ComplaintsData() {
       <ol>
         {complaints.map((complaint) => (
           <li key={complaint.id}>
-            <ComplaintsInput complaint={complaint} />
+            <ComplaintsInput interaction={complaint} />
           </li>
         ))}
       </ol>
