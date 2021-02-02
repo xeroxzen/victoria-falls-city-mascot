@@ -7,12 +7,12 @@ import Footer from "./components/Footer";
 import DiagnosisData from "./components/DiagnosisData";
 import RecommendationData from "./components/RecommendationData";
 import ComplaintsData from "./components/ComplaintsData";
-import Admin from "./components/Admin";
+// import Admin from "./components/Admin";
 import DiagnosisTable from "./components/DiagnosisTable";
 import Container from "@material-ui/core/Container";
 import "@fontsource/roboto";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
-import teal from "@material-ui/core/colors/teal";
+import cyan from "@material-ui/core/colors/teal";
 
 // import {
 //   // makeStyles,
@@ -36,10 +36,10 @@ import teal from "@material-ui/core/colors/teal";
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: teal[600],
+      main: "#0097a7", //cyan[400],
     },
     secondary: {
-      main: "#00897b",
+      main: "#0097a7",
     },
   },
 });
@@ -60,11 +60,9 @@ function App() {
           <div className="App">
             {/* <header className="App-header"> */}
             {/* <NavBar /> */}
-            <Admin />
+            {/* <Admin /> */}
             {/* </header> */}
             <PermanentDrawerLeft />
-
-            <DiagnosisTable />
             <Footer />
           </div>
         </ThemeProvider>
