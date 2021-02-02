@@ -78,7 +78,7 @@ export default function DiagnosisTable() {
               <TableCell align="right">{diagnose.ageRange}</TableCell>
               <TableCell align="right">{diagnose.symptoms}</TableCell>
               <TableCell align="right">
-                {moment(diagnose.time).format("DD-MM-YYYY")}
+                {moment(diagnose.time.toDate(), "YYYY-MM-DD").format("LLL")}
               </TableCell>
             </StyledTableRow>
           ))}
