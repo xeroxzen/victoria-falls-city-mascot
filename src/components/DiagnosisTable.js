@@ -8,6 +8,7 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import firebase from "../firebase";
+import moment from "moment";
 
 const StyledTableCell = withStyles((theme) => ({
   head: {
@@ -76,7 +77,9 @@ export default function DiagnosisTable() {
               <TableCell align="right">{diagnose.gender}</TableCell>
               <TableCell align="right">{diagnose.ageRange}</TableCell>
               <TableCell align="right">{diagnose.symptoms}</TableCell>
-              <TableCell align="right">14:00</TableCell>
+              <TableCell align="right">
+                {moment(diagnose.time).format("DD-MM-YYYY")}
+              </TableCell>
             </StyledTableRow>
           ))}
         </TableBody>
