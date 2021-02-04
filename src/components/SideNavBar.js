@@ -17,6 +17,7 @@ import AccountCircle from "@material-ui/icons/AccountCircle";
 import WbIncandescent from "@material-ui/icons/WbIncandescent";
 import ThumbDown from "@material-ui/icons/ThumbDown";
 import DiagnosisTable from "./DiagnosisTable";
+import RecommendationsTable from "./RecommendationsTable";
 // import teal from "@material-ui/core/colors/teal";
 
 const drawerWidth = 240;
@@ -119,6 +120,7 @@ export default function PermanentDrawerLeft() {
         <Typography paragraph>
           <DiagnosisTable />
         </Typography>
+        <RecommendationsTable />
         <Typography paragraph>{/* Something goes here */}</Typography>
       </main>
     </div>
