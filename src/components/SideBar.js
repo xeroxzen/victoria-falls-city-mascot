@@ -123,7 +123,7 @@ export default function MiniDrawer() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap>
-            Mascot
+            Victoria Falls Mascot
           </Typography>
         </Toolbar>
       </AppBar>

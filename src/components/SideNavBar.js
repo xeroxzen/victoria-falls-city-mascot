@@ -61,7 +61,7 @@ export default function PermanentDrawerLeft() {
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
           <Typography variant="h5" noWrap>
-            Mascot
+            Victoria Falls Mascot
           </Typography>
         </Toolbar>
       </AppBar>
@@ -91,18 +91,20 @@ export default function PermanentDrawerLeft() {
         </List>
         <Divider />
         <List>
-          {["Recommendations", "Complaints"].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? (
-                  <WbIncandescent RecommendationData />
-                ) : (
-                  <ThumbDown ComplaintsData />
-                )}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
+          {["Recommendations", "Complaints"].map(
+            (RecommendationsTable, index) => (
+              <ListItem button key={RecommendationsTable}>
+                <ListItemIcon>
+                  {index % 2 === 0 ? (
+                    <WbIncandescent RecommendationsTable />
+                  ) : (
+                    <ThumbDown ComplaintsTable />
+                  )}
+                </ListItemIcon>
+                <ListItemText primary={RecommendationsTable} />
+              </ListItem>
+            )
+          )}
         </List>
         <Divider />
         <List>
@@ -119,10 +121,19 @@ export default function PermanentDrawerLeft() {
       <main className={classes.content}>
         <div className={classes.toolbar} />
         <Typography paragraph></Typography>
+        <Typography variant="h5" noWrap>
+          Self-Diagnosis Results
+        </Typography>
         <DiagnosisTable />
         <br />
+        <Typography variant="h5" noWrap>
+          Recommendations
+        </Typography>
         <RecommendationsTable />
         <br />
+        <Typography variant="h5" noWrap>
+          Complaints
+        </Typography>
         <ComplaintsTable />
         <Typography paragraph>{/* Something goes here */}</Typography>
       </main>
