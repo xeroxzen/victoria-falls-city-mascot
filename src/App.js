@@ -36,7 +36,7 @@ import cyan from "@material-ui/core/colors/teal";
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: "#0097a7", //cyan[400],
+      main: "#34495E", //cyan[400],
     },
     secondary: {
       main: "#0097a7",
@@ -58,10 +58,6 @@ function App() {
       <Container maxWidth="lg">
         <ThemeProvider theme={theme}>
           <div className="App">
-            {/* <header className="App-header"> */}
-            {/* <NavBar /> */}
-            {/* <Admin /> */}
-            {/* </header> */}
             <PermanentDrawerLeft />
             <Footer />
           </div>

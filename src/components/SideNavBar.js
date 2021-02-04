@@ -36,12 +36,15 @@ const useStyles = makeStyles((theme) => ({
   },
   drawerPaper: {
     width: drawerWidth,
+    backgroundColor: "#34495E",
+    color: "white",
+    onMouseOver: "blue",
   },
   // necessary for content to be below app bar
   toolbar: theme.mixins.toolbar,
   content: {
     flexGrow: 1,
-    backgroundColor: theme.palette.background.default,
+    // backgroundColor: theme.palette.background.default,
     padding: theme.spacing(3),
     backgroundColor: "#0097a7",
   },
@@ -114,12 +117,9 @@ export default function PermanentDrawerLeft() {
       <main className={classes.content}>
         <div className={classes.toolbar} />
         <Typography paragraph>
-          Welcome to the Vic Falls Mascot Dashboard
+          <DiagnosisTable />
         </Typography>
-        <Typography paragraph>
-          How are you today? I hope you're great because I am.
-        </Typography>
-        <DiagnosisTable />
+        <Typography paragraph>{/* Something goes here */}</Typography>
       </main>
     </div>
   );
