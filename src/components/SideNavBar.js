@@ -18,6 +18,7 @@ import WbIncandescent from "@material-ui/icons/WbIncandescent";
 import ThumbDown from "@material-ui/icons/ThumbDown";
 import DiagnosisTable from "./DiagnosisTable";
 import RecommendationsTable from "./RecommendationsTable";
+import ComplaintsTable from "./ComplaintsTable";
 // import teal from "@material-ui/core/colors/teal";
 
 const drawerWidth = 240;
@@ -117,10 +118,12 @@ export default function PermanentDrawerLeft() {
       </Drawer>
       <main className={classes.content}>
         <div className={classes.toolbar} />
-        <Typography paragraph>
-          <DiagnosisTable />
-        </Typography>
+        <Typography paragraph></Typography>
+        <DiagnosisTable />
+        <br />
         <RecommendationsTable />
+        <br />
+        <ComplaintsTable />
         <Typography paragraph>{/* Something goes here */}</Typography>
       </main>
     </div>
