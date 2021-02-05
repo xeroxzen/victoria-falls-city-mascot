@@ -91,20 +91,18 @@ export default function PermanentDrawerLeft() {
         </List>
         <Divider />
         <List>
-          {["Recommendations", "Complaints"].map(
-            (RecommendationsTable, index) => (
-              <ListItem button key={RecommendationsTable}>
-                <ListItemIcon>
-                  {index % 2 === 0 ? (
-                    <WbIncandescent RecommendationsTable />
-                  ) : (
-                    <ThumbDown ComplaintsTable />
-                  )}
-                </ListItemIcon>
-                <ListItemText primary={RecommendationsTable} />
-              </ListItem>
-            )
-          )}
+          {["Recommendations", "Complaints"].map((text, index) => (
+            <ListItem button key={text}>
+              <ListItemIcon>
+                {index % 2 === 0 ? (
+                  <WbIncandescent RecommendationsTable />
+                ) : (
+                  <ThumbDown ComplaintsTable />
+                )}
+              </ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItem>
+          ))}
         </List>
         <Divider />
         <List>
