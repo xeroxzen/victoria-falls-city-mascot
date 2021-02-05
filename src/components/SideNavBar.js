@@ -19,7 +19,15 @@ import ThumbDown from "@material-ui/icons/ThumbDown";
 import DiagnosisTable from "./DiagnosisTable";
 import RecommendationsTable from "./RecommendationsTable";
 import ComplaintsTable from "./ComplaintsTable";
-// import teal from "@material-ui/core/colors/teal";
+import Home from "./Home";
+//react-dom-router
+import ReactDOM from "react-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  useParams,
+} from "react-router-dom";
 
 const drawerWidth = 240;
 
@@ -138,3 +146,16 @@ export default function PermanentDrawerLeft() {
     </div>
   );
 }
+
+ReactDOM.render(
+  <Router>
+    <Switch>
+      <Route exact path="/">
+        <Home />
+      </Route>
+      <Route path="/diagnosis/">
+        <DiagnosisTable />
+      </Route>
+    </Switch>
+  </Router>
+);
