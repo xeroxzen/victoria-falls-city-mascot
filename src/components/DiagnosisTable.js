@@ -69,10 +69,10 @@ export default function DiagnosisTable() {
         <TableHead>
           <StyledTableRow>
             <StyledTableCell>Phone Number</StyledTableCell>
-            <StyledTableCell align="right">Gender</StyledTableCell>
-            <StyledTableCell align="right">Age Range</StyledTableCell>
-            <StyledTableCell align="right">Symptom</StyledTableCell>
-            <StyledTableCell align="right">Recorded Time</StyledTableCell>
+            <StyledTableCell align="left">Gender</StyledTableCell>
+            <StyledTableCell align="left">Age Range</StyledTableCell>
+            <StyledTableCell align="left">Symptom</StyledTableCell>
+            <StyledTableCell align="left">Recorded Time</StyledTableCell>
           </StyledTableRow>
         </TableHead>
         <TableBody>
@@ -81,10 +81,10 @@ export default function DiagnosisTable() {
               <TableCell component="th" scope="row">
                 {diagnose.phone}
               </TableCell>
-              <TableCell align="right">{diagnose.gender}</TableCell>
-              <TableCell align="right">{diagnose.age}</TableCell>
-              <TableCell align="right">{diagnose.symptoms}</TableCell>
-              <TableCell align="right">
+              <TableCell align="left">{diagnose.gender}</TableCell>
+              <TableCell align="left">{diagnose.age}</TableCell>
+              <TableCell align="left">{diagnose.symptoms}</TableCell>
+              <TableCell align="left">
                 {moment(diagnose.time.toDate(), "YYYY-MM-DD").format("LLL")}
               </TableCell>
             </StyledTableRow>
