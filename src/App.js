@@ -12,7 +12,6 @@ import Footer from "./components/Footer";
 import Container from "@material-ui/core/Container";
 import "@fontsource/roboto";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
-// import cyan from "@material-ui/core/colors/teal";
 
 // import {
 //   // makeStyles,

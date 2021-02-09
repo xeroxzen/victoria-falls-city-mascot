@@ -9,13 +9,6 @@ import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import firebase from "../firebase";
 import moment from "moment";
-import ReactDOM from "react-dom";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  useParams,
-} from "react-router-dom";
 
 const StyledTableCell = withStyles((theme) => ({
   head: {
@@ -44,16 +37,16 @@ const useStyles = makeStyles({
   },
 });
 
-export default function DiagnosisTable() {
+export default function ComplaintsTable() {
   const classes = useStyles();
-  const [diagnosis, setDiagnosis] = React.useState([]);
+  const [complaints, setComplaints] = React.useState([]);
 
   React.useEffect(() => {
     const fetchData = async () => {
       const db = firebase.firestore();
-      const diagnosisRef = await db.collection("userDiagnosis").get();
-      setDiagnosis(
-        diagnosisRef.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
+      const complaintsRef = await db.collection("Complaints").get();
+      setComplaints(
+        complaintsRef.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
       );
     };
     fetchData();
@@ -68,24 +61,21 @@ export default function DiagnosisTable() {
       >
         <TableHead>
           <StyledTableRow>
-            <StyledTableCell>Phone Number</StyledTableCell>
-            <StyledTableCell align="right">Gender</StyledTableCell>
-            <StyledTableCell align="right">Age Range</StyledTableCell>
-            <StyledTableCell align="right">Symptom</StyledTableCell>
-            <StyledTableCell align="right">Recorded Time</StyledTableCell>
+            <StyledTableCell>Complaints</StyledTableCell>
+            <StyledTableCell align="right">Date</StyledTableCell>
           </StyledTableRow>
         </TableHead>
         <TableBody>
-          {diagnosis.map((diagnose) => (
-            <StyledTableRow key={diagnose.id}>
+          {complaints.map((complaint) => (
+            <StyledTableRow key={complaint.id}>
               <TableCell component="th" scope="row">
-                {diagnose.phone}
+                {complaint.complaint}
               </TableCell>
-              <TableCell align="right">{diagnose.gender}</TableCell>
+              {/* <TableCell align="right">{diagnose.gender}</TableCell>
               <TableCell align="right">{diagnose.ageRange}</TableCell>
-              <TableCell align="right">{diagnose.symptoms}</TableCell>
+              <TableCell align="right">{diagnose.symptoms}</TableCell> */}
               <TableCell align="right">
-                {moment(diagnose.time.toDate(), "YYYY-MM-DD").format("LLL")}
+                {moment(complaint.date.toDate(), "YYYY-MM-DD").format("LLL")}
               </TableCell>
             </StyledTableRow>
           ))}

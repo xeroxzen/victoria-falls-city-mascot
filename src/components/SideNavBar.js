@@ -17,7 +17,17 @@ import AccountCircle from "@material-ui/icons/AccountCircle";
 import WbIncandescent from "@material-ui/icons/WbIncandescent";
 import ThumbDown from "@material-ui/icons/ThumbDown";
 import DiagnosisTable from "./DiagnosisTable";
-// import teal from "@material-ui/core/colors/teal";
+import RecommendationsTable from "./RecommendationsTable";
+import ComplaintsTable from "./ComplaintsTable";
+import Home from "./Home";
+//react-dom-router
+import ReactDOM from "react-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  useParams,
+} from "react-router-dom";
 
 const drawerWidth = 240;
 
@@ -59,7 +69,7 @@ export default function PermanentDrawerLeft() {
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
           <Typography variant="h5" noWrap>
-            Mascot
+            Victoria Falls Mascot
           </Typography>
         </Toolbar>
       </AppBar>
@@ -93,9 +103,9 @@ export default function PermanentDrawerLeft() {
             <ListItem button key={text}>
               <ListItemIcon>
                 {index % 2 === 0 ? (
-                  <WbIncandescent RecommendationData />
+                  <WbIncandescent RecommendationsTable />
                 ) : (
-                  <ThumbDown ComplaintsData />
+                  <ThumbDown ComplaintsTable />
                 )}
               </ListItemIcon>
               <ListItemText primary={text} />
@@ -116,11 +126,36 @@ export default function PermanentDrawerLeft() {
       </Drawer>
       <main className={classes.content}>
         <div className={classes.toolbar} />
-        <Typography paragraph>
-          <DiagnosisTable />
+        <Typography paragraph></Typography>
+        <Typography variant="h5" noWrap>
+          Self-Diagnosis Results
         </Typography>
+        <DiagnosisTable />
+        <br />
+        <Typography variant="h5" noWrap>
+          Recommendations
+        </Typography>
+        <RecommendationsTable />
+        <br />
+        <Typography variant="h5" noWrap>
+          Complaints
+        </Typography>
+        <ComplaintsTable />
         <Typography paragraph>{/* Something goes here */}</Typography>
       </main>
     </div>
   );
 }
+
+// ReactDOM.render(
+//   <Router>
+//     <Switch>
+//       <Route exact path="/">
+//         <Home />
+//       </Route>
+//       <Route path="/diagnosis/:slug">
+//         <DiagnosisTable />
+//       </Route>
+//     </Switch>
+//   </Router>
+// );
