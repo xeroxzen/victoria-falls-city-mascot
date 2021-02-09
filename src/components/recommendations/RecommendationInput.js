@@ -1,5 +1,5 @@
 import React from "react";
-import firebase from "../firebase";
+import firebase from "../../firebase";
 import Button from "@material-ui/core/Button";
 import DeleteIcon from "@material-ui/icons/Delete";
 import SaveIcon from "@material-ui/icons/Save";

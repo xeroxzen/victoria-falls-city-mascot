@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
-import PermanentDrawerLeft from "./components/SideNavBar";
-import Footer from "./components/Footer";
+import PermanentDrawerLeft from "./components/nav/SideNavBar";
+import Footer from "./components/footer/Footer";
 
 import Container from "@material-ui/core/Container";
 import "@fontsource/roboto";

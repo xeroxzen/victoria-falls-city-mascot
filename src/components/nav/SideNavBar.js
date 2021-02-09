@@ -1,5 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
+import Button from "@material-ui/core/Button";
 import Drawer from "@material-ui/core/Drawer";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import AppBar from "@material-ui/core/AppBar";
@@ -16,10 +17,10 @@ import CalendarToday from "@material-ui/icons/CalendarToday";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import WbIncandescent from "@material-ui/icons/WbIncandescent";
 import ThumbDown from "@material-ui/icons/ThumbDown";
-import DiagnosisTable from "./DiagnosisTable";
+import DiagnosisTable from "../diagnosis/DiagnosisTable";
 import RecommendationsTable from "./RecommendationsTable";
-import ComplaintsTable from "./ComplaintsTable";
-import Home from "./Home";
+import ComplaintsTable from "../complaints/ComplaintsTable";
+import Home from "../home/Home";
 //react-dom-router
 import ReactDOM from "react-dom";
 import {
@@ -70,6 +71,16 @@ export default function PermanentDrawerLeft() {
         <Toolbar>
           <Typography variant="h5" noWrap>
             Victoria Falls Mascot
+          </Typography>
+          <Typography variant="contained" noWrap align="right">
+            <Button
+              variant="contained"
+              size="large"
+              color="secondary"
+              endIcon={<AccountCircle />}
+            >
+              Login
+            </Button>
           </Typography>
         </Toolbar>
       </AppBar>

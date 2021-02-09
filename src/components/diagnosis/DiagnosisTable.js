@@ -7,8 +7,14 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
-import firebase from "../firebase";
+import firebase from "../../firebase";
 import moment from "moment";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  useParams,
+} from "react-router-dom";
 
 const StyledTableCell = withStyles((theme) => ({
   head: {
@@ -37,16 +43,16 @@ const useStyles = makeStyles({
   },
 });
 
-export default function ComplaintsTable() {
+export default function DiagnosisTable() {
   const classes = useStyles();
-  const [complaints, setComplaints] = React.useState([]);
+  const [diagnosis, setDiagnosis] = React.useState([]);
 
   React.useEffect(() => {
     const fetchData = async () => {
       const db = firebase.firestore();
-      const complaintsRef = await db.collection("Complaints").get();
-      setComplaints(
-        complaintsRef.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
+      const diagnosisRef = await db.collection("userDiagnosis").get();
+      setDiagnosis(
+        diagnosisRef.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
       );
     };
     fetchData();
@@ -61,21 +67,24 @@ export default function ComplaintsTable() {
       >
         <TableHead>
           <StyledTableRow>
-            <StyledTableCell>Complaints</StyledTableCell>
-            <StyledTableCell align="right">Date</StyledTableCell>
+            <StyledTableCell>Phone Number</StyledTableCell>
+            <StyledTableCell align="left">Gender</StyledTableCell>
+            <StyledTableCell align="left">Age Range</StyledTableCell>
+            <StyledTableCell align="left">Symptom</StyledTableCell>
+            <StyledTableCell align="left">Recorded Time</StyledTableCell>
           </StyledTableRow>
         </TableHead>
         <TableBody>
-          {complaints.map((complaint) => (
-            <StyledTableRow key={complaint.id}>
+          {diagnosis.map((diagnose) => (
+            <StyledTableRow key={diagnose.id}>
               <TableCell component="th" scope="row">
-                {complaint.complaint}
+                {diagnose.phone}
               </TableCell>
-              {/* <TableCell align="right">{diagnose.gender}</TableCell>
-              <TableCell align="right">{diagnose.ageRange}</TableCell>
-              <TableCell align="right">{diagnose.symptoms}</TableCell> */}
-              <TableCell align="right">
-                {moment(complaint.date.toDate(), "YYYY-MM-DD").format("LLL")}
+              <TableCell align="left">{diagnose.gender}</TableCell>
+              <TableCell align="left">{diagnose.age}</TableCell>
+              <TableCell align="left">{diagnose.symptoms}</TableCell>
+              <TableCell align="left">
+                {moment(diagnose.time.toDate(), "YYYY-MM-DD").format("LLL")}
               </TableCell>
             </StyledTableRow>
           ))}

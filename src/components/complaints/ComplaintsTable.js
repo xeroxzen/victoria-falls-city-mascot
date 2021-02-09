@@ -7,14 +7,8 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
-import firebase from "../firebase";
+import firebase from "../../firebase";
 import moment from "moment";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  useParams,
-} from "react-router-dom";
 
 const StyledTableCell = withStyles((theme) => ({
   head: {
@@ -43,16 +37,16 @@ const useStyles = makeStyles({
   },
 });
 
-export default function DiagnosisTable() {
+export default function ComplaintsTable() {
   const classes = useStyles();
-  const [diagnosis, setDiagnosis] = React.useState([]);
+  const [complaints, setComplaints] = React.useState([]);
 
   React.useEffect(() => {
     const fetchData = async () => {
       const db = firebase.firestore();
-      const diagnosisRef = await db.collection("userDiagnosis").get();
-      setDiagnosis(
-        diagnosisRef.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
+      const complaintsRef = await db.collection("Complaints").get();
+      setComplaints(
+        complaintsRef.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
       );
     };
     fetchData();
@@ -67,24 +61,21 @@ export default function DiagnosisTable() {
       >
         <TableHead>
           <StyledTableRow>
-            <StyledTableCell>Phone Number</StyledTableCell>
-            <StyledTableCell align="left">Gender</StyledTableCell>
-            <StyledTableCell align="left">Age Range</StyledTableCell>
-            <StyledTableCell align="left">Symptom</StyledTableCell>
-            <StyledTableCell align="left">Recorded Time</StyledTableCell>
+            <StyledTableCell>Complaints</StyledTableCell>
+            <StyledTableCell align="right">Date</StyledTableCell>
           </StyledTableRow>
         </TableHead>
         <TableBody>
-          {diagnosis.map((diagnose) => (
-            <StyledTableRow key={diagnose.id}>
+          {complaints.map((complaint) => (
+            <StyledTableRow key={complaint.id}>
               <TableCell component="th" scope="row">
-                {diagnose.phone}
+                {complaint.complaint}
               </TableCell>
-              <TableCell align="left">{diagnose.gender}</TableCell>
-              <TableCell align="left">{diagnose.age}</TableCell>
-              <TableCell align="left">{diagnose.symptoms}</TableCell>
-              <TableCell align="left">
-                {moment(diagnose.time.toDate(), "YYYY-MM-DD").format("LLL")}
+              {/* <TableCell align="right">{diagnose.gender}</TableCell>
+              <TableCell align="right">{diagnose.ageRange}</TableCell>
+              <TableCell align="right">{diagnose.symptoms}</TableCell> */}
+              <TableCell align="right">
+                {moment(complaint.date.toDate(), "YYYY-MM-DD").format("LLL")}
               </TableCell>
             </StyledTableRow>
           ))}
