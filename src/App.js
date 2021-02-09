@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import PermanentDrawerLeft from "./components/nav/SideNavBar";
+import PermanentDrawerLeft from "./components/nav/Navbar";
 import Footer from "./components/footer/Footer";
 
 import Container from "@material-ui/core/Container";
