@@ -18,7 +18,7 @@ import AccountCircle from "@material-ui/icons/AccountCircle";
 import WbIncandescent from "@material-ui/icons/WbIncandescent";
 import ThumbDown from "@material-ui/icons/ThumbDown";
 import DiagnosisTable from "../diagnosis/DiagnosisTable";
-import RecommendationsTable from "./RecommendationsTable";
+import RecommendationsTable from "../recommendations/RecommendationsTable";
 import ComplaintsTable from "../complaints/ComplaintsTable";
 import Home from "../home/Home";
 //react-dom-router
