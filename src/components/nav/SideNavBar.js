@@ -157,16 +157,3 @@ export default function PermanentDrawerLeft() {
     </div>
   );
 }
-
-// ReactDOM.render(
-//   <Router>
-//     <Switch>
-//       <Route exact path="/">
-//         <Home />
-//       </Route>
-//       <Route path="/diagnosis/:slug">
-//         <DiagnosisTable />
-//       </Route>
-//     </Switch>
-//   </Router>
-// );
