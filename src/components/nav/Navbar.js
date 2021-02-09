@@ -20,15 +20,15 @@ import ThumbDown from "@material-ui/icons/ThumbDown";
 import DiagnosisTable from "../diagnosis/DiagnosisTable";
 import RecommendationsTable from "../recommendations/RecommendationsTable";
 import ComplaintsTable from "../complaints/ComplaintsTable";
-import Home from "../home/Home";
-//react-dom-router
-import ReactDOM from "react-dom";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  useParams,
-} from "react-router-dom";
+// import Home from "../home/Home";
+// //react-dom-router
+// import ReactDOM from "react-dom";
+// import {
+//   BrowserRouter as Router,
+//   Switch,
+//   Route,
+//   useParams,
+// } from "react-router-dom";
 
 const drawerWidth = 240;
 

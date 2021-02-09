@@ -9,12 +9,12 @@ import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import firebase from "../../firebase";
 import moment from "moment";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  useParams,
-} from "react-router-dom";
+// import {
+//   BrowserRouter as Router,
+//   Switch,
+//   Route,
+//   useParams,
+// } from "react-router-dom";
 
 const StyledTableCell = withStyles((theme) => ({
   head: {
