@@ -4,15 +4,15 @@ import "./App.css";
 // import MiniDrawer from "./components/SideBar";
 import PermanentDrawerLeft from "./components/SideNavBar";
 import Footer from "./components/Footer";
-import DiagnosisData from "./components/DiagnosisData";
-import RecommendationData from "./components/RecommendationData";
-import ComplaintsData from "./components/ComplaintsData";
+// import DiagnosisData from "./components/DiagnosisData";
+// import RecommendationData from "./components/RecommendationData";
+// import ComplaintsData from "./components/ComplaintsData";
 // import Admin from "./components/Admin";
-import DiagnosisTable from "./components/DiagnosisTable";
+// import DiagnosisTable from "./components/DiagnosisTable";
 import Container from "@material-ui/core/Container";
 import "@fontsource/roboto";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
-import cyan from "@material-ui/core/colors/teal";
+// import cyan from "@material-ui/core/colors/teal";
 
 // import {
 //   // makeStyles,
