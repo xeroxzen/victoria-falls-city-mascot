@@ -9,7 +9,6 @@ import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import firebase from "../firebase";
 import moment from "moment";
-import ReactDOM from "react-dom";
 import {
   BrowserRouter as Router,
   Switch,
