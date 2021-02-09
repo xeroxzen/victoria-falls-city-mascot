@@ -11,6 +11,9 @@
 # production
 /build
 
+# discarded code
+DiscardedCode.txt
+
 # misc
 .DS_Store
 .env.local
