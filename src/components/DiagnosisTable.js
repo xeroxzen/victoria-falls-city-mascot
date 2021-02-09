@@ -82,7 +82,7 @@ export default function DiagnosisTable() {
                 {diagnose.phone}
               </TableCell>
               <TableCell align="right">{diagnose.gender}</TableCell>
-              <TableCell align="right">{diagnose.ageRange}</TableCell>
+              <TableCell align="right">{diagnose.age}</TableCell>
               <TableCell align="right">{diagnose.symptoms}</TableCell>
               <TableCell align="right">
                 {moment(diagnose.time.toDate(), "YYYY-MM-DD").format("LLL")}
